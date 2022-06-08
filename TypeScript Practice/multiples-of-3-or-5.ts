@@ -6,21 +6,21 @@
 
 // SOLUTION
 
-// export class Challenge {
-//     static solution(number: number) {
-//         let sum = 0;
-//         let i: number;
+export class Challenge {
+    static solution(number: number) {
+        let sum = 0;
+        let i: number;
 
-//         if (number < 0) {
-//             return 0;
-//         }
+        if (number < 0) {
+            return 0;
+        }
 
-//         for (i = 0; i < number; i++) {
-//             if (i % 3 === 0 || i % 5 === 0) {
-//                 sum += i;
-//             }
-//         }
+        for (i = 0; i < number; i++) {
+            if (i % 3 === 0 || i % 5 === 0) {
+                sum += i;
+            }
+        }
 
-//         return sum;
-//     }
-// }
+        return sum;
+    }
+}

@@ -4,7 +4,7 @@
 
 // SOLUTION
 
-/* export function spinWords(words: string): string {
+export function spinWords(words: string): string {
     let wordsArr: string[] = words.split(" ");
     let withReversedArr: string[] = [];
 
@@ -18,4 +18,4 @@
     });
 
     return withReversedArr.join(" ");
-} */
+}
