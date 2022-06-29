@@ -23,16 +23,16 @@
 // SOLUTION
 
 // build i'th floor for a tower of size n floors
-function buildFloor(i: number, n: number): string {
-    let middleSection = "*".repeat(2 * i - 1);
-    let sideSection = " ".repeat(n - i);
-    let floor = sideSection + middleSection + sideSection;
-    return floor;
-}
-export const towerBuilder = (nFloors: number): string[] => {
-    let result = [];
-    for (let i = 1; i <= nFloors; i++) {
-        result.push(buildFloor(i, nFloors));
-    }
-    return result;
-};
+// function buildFloor(i: number, n: number): string {
+//     let middleSection = "*".repeat(2 * i - 1);
+//     let sideSection = " ".repeat(n - i);
+//     let floor = sideSection + middleSection + sideSection;
+//     return floor;
+// }
+// export const towerBuilder = (nFloors: number): string[] => {
+//     let result = [];
+//     for (let i = 1; i <= nFloors; i++) {
+//         result.push(buildFloor(i, nFloors));
+//     }
+//     return result;
+// };
