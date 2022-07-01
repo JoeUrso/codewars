@@ -1,84 +1,33 @@
-// This is a shitty attempt and doesnt work anyway
+// PROBLEM
+// Create a function taking a positive integer as its parameter and returning a string containing the Roman Numeral representation of that integer. Modern Roman numerals are written by expressing each digit separately starting with the left most digit and skipping any digit with a value of zero. In Roman numerals 1990 is rendered: 1000=M, 900=CM, 90=XC; resulting in MCMXC. 2008 is written as 2000=MM, 8=VIII; or MMVIII. 1666 uses each Roman symbol in descending order: MDCLXVI.
 
-// export function solution(number: number): string {
-//     // convert the number to a roman numeral
-//     let originalNum: number = number;
-//     let numBreakdown: number[] = [];
-//     let answer = "";
+// SOLUTION
+function solution(num) {
+    const romansAndTheirValues = {
+        M: 1000,
+        CM: 900,
+        D: 500,
+        CD: 400,
+        C: 100,
+        XC: 90,
+        L: 50,
+        XL: 40,
+        X: 10,
+        IX: 9,
+        V: 5,
+        IV: 4,
+        I: 1,
+    };
 
-//     while (originalNum > 0) {
-//         if (originalNum === 4 || 9 || 40 || 90 || 400 || 900) {
-//             numBreakdown.push(originalNum);
-//             originalNum -= originalNum;
-//         }
+    let result = "";
 
-//         if (originalNum >= 1000) {
-//             numBreakdown.push(1000);
-//             originalNum -= 1000;
-//         } else if (originalNum >= 500) {
-//             numBreakdown.push(500);
-//             originalNum -= 500;
-//         } else if (originalNum >= 100) {
-//             numBreakdown.push(100);
-//             originalNum -= 100;
-//         } else if (originalNum >= 50) {
-//             numBreakdown.push(50);
-//             originalNum -= 50;
-//         } else if (originalNum >= 10) {
-//             numBreakdown.push(10);
-//             originalNum -= 10;
-//         } else if (originalNum >= 5) {
-//             numBreakdown.push(5);
-//             originalNum -= 5;
-//         } else if (originalNum >= 1) {
-//             numBreakdown.push(1);
-//             originalNum -= 1;
-//         }
-//     }
+    for (const [key, value] of Object.entries(romansAndTheirValues)) {
+        while (num >= value) {
+            result += key;
 
-//     for (let i = 0; i < numBreakdown.length; i++) {
-//         switch (numBreakdown[i]) {
-//             case 1:
-//                 answer += "I";
-//                 break;
-//             case 5:
-//                 answer += "V";
-//                 break;
-//             case 10:
-//                 answer += "X";
-//                 break;
-//             case 50:
-//                 answer += "L";
-//                 break;
-//             case 100:
-//                 answer += "C";
-//                 break;
-//             case 500:
-//                 answer += "D";
-//                 break;
-//             case 1000:
-//                 answer += "M";
-//                 break;
-//             case 4:
-//                 answer += "IV";
-//                 break;
-//             case 9:
-//                 answer += "IX";
-//                 break;
-//             case 40:
-//                 answer += "XL";
-//                 break;
-//             case 90:
-//                 answer += "XC";
-//                 break;
-//             case 400:
-//                 answer += "CD";
-//                 break;
-//             case 900:
-//                 answer += "CM";
-//                 break;
-//         }
-//     }
+            num -= value;
+        }
+    }
 
-//     return answer;
-// }
+    return result;
+}
